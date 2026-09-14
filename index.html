@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kafi Nur Hikmah — Full-Stack Web & Mobile Developer</title>
+  <meta name="description" content="Portofolio Profesional Kafi Nur Hikmah. Full-Stack Web Developer & Mobile Developer berpengalaman membangun aplikasi web scalable dan mobile app performa tinggi.">
+  <meta name="keywords" content="Kafi Nur Hikmah, Full-Stack Developer, Web Developer, Mobile Developer, Flutter, React Native, Next.js, Node.js, PHP, Indonesia">
+  <meta name="author" content="Kafi Nur Hikmah">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Kafi Nur Hikmah — Full-Stack Web & Mobile Developer">
+  <meta property="og:description" content="Membangun aplikasi web scalable dan aplikasi mobile performa tinggi dari frontend hingga backend.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              blue: '#2563eb',
+              cyan: '#06b6d4',
+              purple: '#8b5cf6',
+              neon: '#38bdf8',
+            },
+            dark: {
+              bg: '#050811',
+              card: '#0b1120',
+              border: '#1e293b',
+              surface: '#0f172a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-[#050811] text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950 overflow-x-hidden relative">
+
+  <!-- Interactive Cursor Glow -->
+  <div id="cursor-glow" class="cursor-glow pointer-events-none fixed inset-0 z-0 transition-opacity duration-300 opacity-0"></div>
+
+  <!-- Ambient Glowing Background Lights -->
+  <div class="fixed top-0 left-1/4 w-[500px] h-[500px] bg-blue-600/15 rounded-full blur-[140px] pointer-events-none -z-10 animate-blob"></div>
+  <div class="fixed top-1/3 right-10 w-[450px] h-[450px] bg-cyan-500/15 rounded-full blur-[130px] pointer-events-none -z-10 animate-blob animation-delay-2000"></div>
+  <div class="fixed bottom-10 left-1/3 w-[600px] h-[600px] bg-purple-600/15 rounded-full blur-[160px] pointer-events-none -z-10 animate-blob animation-delay-4000"></div>
+
+  <!-- Background Grid Pattern -->
+  <div class="fixed inset-0 bg-grid-pattern opacity-40 pointer-events-none -z-10"></div>
+
+  <!-- =========================================================================
+       HEADER / NAVIGATION BAR
+       ========================================================================= -->
+  <header class="sticky top-0 z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center font-mono font-bold text-slate-950 shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+          &lt;K/&gt;
+        </div>
+        <div class="flex flex-col">
+          <span class="text-lg font-extrabold tracking-tight text-white group-hover:text-cyan-400 transition-colors">
+            Kafi Nur Hikmah
+          </span>
+          <span class="text-[11px] font-mono text-cyan-400 tracking-wider flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-glow"></span>
+            FULL-STACK DEV
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#about" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors">About</a>
+        <a href="#skills" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors">Skills</a>
+        <a href="#projects" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors">Projects</a>
+        <a href="#experience" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors">Experience</a>
+        <a href="#contact" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Header CTAs -->
+      <div class="hidden md:flex items-center gap-3">
+        <!-- Download CV Button -->
+        <button type="button" class="cv-modal-trigger px-4 py-2 rounded-xl text-xs font-semibold text-slate-200 hover:text-white bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700/60 transition-all duration-200 flex items-center gap-2">
+          <i data-lucide="file-text" class="w-4 h-4 text-cyan-400"></i>
+          Download CV
+        </button>
+
+        <!-- Hire Me CTA Button -->
+        <a href="#contact" class="px-5 py-2 rounded-xl text-xs font-bold text-slate-950 bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/35 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex items-center gap-2">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+          Hire Me
+        </a>
+      </div>
+
+      <!-- Mobile Menu Hamburger Button -->
+      <div class="flex items-center gap-2 md:hidden">
+        <button id="mobile-menu-btn" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white" aria-label="Toggle Mobile Menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden md:hidden glass-panel border-b border-slate-800 px-6 py-6 space-y-4">
+      <nav class="flex flex-col space-y-3 text-base font-medium">
+        <a href="#about" class="mobile-nav-link text-slate-300 hover:text-cyan-400 py-1 flex items-center gap-3">
+          <i data-lucide="user" class="w-4 h-4 text-cyan-400"></i> About Me
+        </a>
+        <a href="#skills" class="mobile-nav-link text-slate-300 hover:text-cyan-400 py-1 flex items-center gap-3">
+          <i data-lucide="code-2" class="w-4 h-4 text-cyan-400"></i> Tech Stack
+        </a>
+        <a href="#projects" class="mobile-nav-link text-slate-300 hover:text-cyan-400 py-1 flex items-center gap-3">
+          <i data-lucide="folder-git-2" class="w-4 h-4 text-cyan-400"></i> Featured Projects
+        </a>
+        <a href="#experience" class="mobile-nav-link text-slate-300 hover:text-cyan-400 py-1 flex items-center gap-3">
+          <i data-lucide="briefcase" class="w-4 h-4 text-cyan-400"></i> Experience & Education
+        </a>
+        <a href="#contact" class="mobile-nav-link text-slate-300 hover:text-cyan-400 py-1 flex items-center gap-3">
+          <i data-lucide="mail" class="w-4 h-4 text-cyan-400"></i> Contact
+        </a>
+      </nav>
+      <div class="pt-4 border-t border-slate-800 flex flex-col gap-2.5">
+        <button type="button" class="cv-modal-trigger w-full py-2.5 rounded-xl text-xs font-semibold text-slate-200 bg-slate-800 border border-slate-700 flex items-center justify-center gap-2">
+          <i data-lucide="file-text" class="w-4 h-4 text-cyan-400"></i> Download CV
+        </button>
+        <a href="#contact" class="mobile-nav-link w-full py-2.5 rounded-xl text-xs font-bold text-slate-950 bg-gradient-to-r from-cyan-400 to-blue-500 flex items-center justify-center gap-2">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Hire Me
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       HERO SECTION
+       ========================================================================= -->
+  <section id="home" class="relative pt-12 pb-24 md:pt-20 md:pb-32 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Hero Text & CTA (7 cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- Status Pill -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/30 text-xs font-mono text-cyan-300 shadow-sm backdrop-blur-md">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-glow"></span>
+            Tersedia untuk Posisi Full-Time & Project-Based
+          </div>
+
+          <!-- Headline -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]" data-aos="fade-up">
+            Halo, Saya <span class="text-gradient-cyan-blue">Kafi Nur Hikmah</span>
+            <br>
+            <span class="text-2xl sm:text-3xl lg:text-4xl text-slate-300 font-bold mt-2 block min-h-[32px] sm:min-h-[40px] lg:min-h-[48px]">
+              <span id="typed-role"></span>
+            </span>
+          </h1>
+
+          <!-- Subheadline -->
+          <p class="text-base sm:text-lg text-slate-400 leading-relaxed max-w-2xl" data-aos="fade-up" data-aos-delay="100">
+            Berpengalaman merancang dan membangun arsitektur sistem digital modern secara menyeluruh. Menggabungkan pengembangan aplikasi web yang <strong class="text-slate-200">scalable</strong> dan aplikasi mobile <strong class="text-slate-200">berperforma tinggi</strong> dari frontend yang interaktif hingga backend dan database yang efisien.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-2" data-aos="fade-up" data-aos-delay="200">
+            <a href="#projects" class="px-6 py-3.5 rounded-xl font-bold text-sm text-slate-950 bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 flex items-center gap-2.5">
+              <i data-lucide="eye" class="w-4 h-4"></i>
+              Lihat Proyek
+            </a>
+            
+            <a href="#contact" class="px-6 py-3.5 rounded-xl font-semibold text-sm text-slate-200 hover:text-white bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 hover:border-cyan-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 flex items-center gap-2.5">
+              <i data-lucide="mail" class="w-4 h-4 text-cyan-400"></i>
+              Hubungi Saya
+            </a>
+          </div>
+
+          <!-- Social Links Bar -->
+          <div class="pt-6 border-t border-slate-800/80 flex items-center gap-4">
+            <span class="text-xs font-mono text-slate-500 uppercase tracking-wider">Socials:</span>
+            
+            <!-- GitHub -->
+            <a href="https://github.com/kafinurhikmah" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/50 hover:bg-slate-800 text-slate-400 hover:text-cyan-400 transition-all duration-200 hover:-translate-y-1" title="GitHub Profile">
+              <i data-lucide="github" class="w-5 h-5"></i>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/kafinurhikmah" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/50 hover:bg-slate-800 text-slate-400 hover:text-cyan-400 transition-all duration-200 hover:-translate-y-1" title="LinkedIn Profile">
+              <i data-lucide="linkedin" class="w-5 h-5"></i>
+            </a>
+
+            <!-- Email Direct -->
+            <a href="mailto:kafinurhikmah@gmail.com" class="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/50 hover:bg-slate-800 text-slate-400 hover:text-cyan-400 transition-all duration-200 hover:-translate-y-1" title="Kirim Email">
+              <i data-lucide="mail" class="w-5 h-5"></i>
+            </a>
+
+            <!-- WhatsApp Direct -->
+            <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/50 hover:bg-slate-800 text-slate-400 hover:text-emerald-400 transition-all duration-200 hover:-translate-y-1" title="WhatsApp Chat">
+              <i data-lucide="message-square" class="w-5 h-5"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Tech Terminal & Mockup Card (5 cols) -->
+        <div class="lg:col-span-5 relative" data-aos="fade-left" data-aos-delay="300">
+          
+          <!-- Glowing Ambient Aura behind terminal -->
+          <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-cyan-500 to-purple-600 opacity-20 blur-xl"></div>
+          
+          <!-- Terminal Window -->
+          <div class="relative rounded-2xl code-window overflow-hidden border border-slate-700/60 shadow-2xl">
+            <!-- Window Top Bar -->
+            <div class="px-4 py-3 bg-slate-900/90 border-b border-slate-800 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+              </div>
+              <span class="text-xs font-mono text-slate-400 flex items-center gap-1.5">
+                <i data-lucide="terminal" class="w-3.5 h-3.5 text-cyan-400"></i>
+                developer-profile.ts
+              </span>
+              <span class="text-[11px] font-mono text-slate-500">v2.6</span>
+            </div>
+
+            <!-- Code Content Area -->
+            <div class="p-5 font-mono text-xs sm:text-sm space-y-2 leading-relaxed overflow-x-auto text-slate-300">
+              <p><span class="text-purple-400 font-semibold">const</span> <span class="text-cyan-300">developer</span>: <span class="text-yellow-300">FullStackEngineer</span> = {</p>
+              <p class="pl-4"><span class="text-slate-400">name:</span> <span class="text-emerald-300">'Kafi Nur Hikmah'</span>,</p>
+              <p class="pl-4"><span class="text-slate-400">roles:</span> [</p>
+              <p class="pl-8 text-emerald-300">'Full-Stack Web Developer',</p>
+              <p class="pl-8 text-emerald-300">'Full-Stack Mobile Developer'</p>
+              <p class="pl-4">],</p>
+              <p class="pl-4"><span class="text-slate-400">coreSpecialties:</span> [</p>
+              <p class="pl-8 text-amber-300">'End-to-End Web Architecture',</p>
+              <p class="pl-8 text-amber-300">'Cross-Platform Mobile Apps',</p>
+              <p class="pl-8 text-amber-300">'REST API & Database Tuning'</p>
+              <p class="pl-4">],</p>
+              <p class="pl-4"><span class="text-slate-400">availableForHire:</span> <span class="text-cyan-400 font-bold">true</span>,</p>
+              <p class="pl-4"><span class="text-slate-400">contact:</span> <span class="text-emerald-300">'kafinurhikmah@gmail.com'</span></p>
+              <p>};</p>
+              
+              <div class="pt-3 border-t border-slate-800 text-slate-400 text-xs">
+                <p><span class="text-cyan-400 font-bold">&gt;</span> developer.buildSolution({</p>
+                <p class="pl-4 text-slate-400">quality: <span class="text-emerald-300">'Clean Code & High Scalability'</span>,</p>
+                <p class="pl-4 text-slate-400">delivery: <span class="text-emerald-300">'On-Time & Production-Ready'</span></p>
+                <p>});</p>
+                <p class="text-emerald-400 font-bold mt-1">✔ System deployed successfully with 99.9% uptime.</p>
+              </div>
+            </div>
+
+            <!-- Floating Tech Metric Pill -->
+            <div class="px-5 py-3 bg-slate-900/90 border-t border-slate-800 flex items-center justify-between text-xs font-mono">
+              <span class="text-slate-400 flex items-center gap-1.5">
+                <i data-lucide="cpu" class="w-3.5 h-3.5 text-cyan-400"></i> Web + Mobile Stack
+              </span>
+              <span class="text-cyan-400 font-bold">100% Responsive</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       ABOUT ME SECTION
+       ========================================================================= -->
+  <section id="about" class="py-20 relative border-t border-slate-900 bg-slate-950/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto space-y-3 mb-16" data-aos="fade-up">
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest px-3 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/20 inline-block">
+          Tentang Saya
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+          Dedikasi pada <span class="text-gradient-cyan-blue">Clean Code</span> & Solusi Skalabilitas
+        </h2>
+        <p class="text-slate-400 text-base leading-relaxed">
+          Menggabungkan keahlian logika komputasi backend yang solid dengan desain pengalaman pengguna yang intuitif di perangkat web dan mobile.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        
+        <!-- Left: Detailed Narrative (7 cols) -->
+        <div class="lg:col-span-7 space-y-6 text-slate-300 leading-relaxed text-base" data-aos="fade-right" data-aos-delay="100">
+          <div class="glass-panel p-8 rounded-2xl border border-slate-800 space-y-4">
+            <p>
+              Saya adalah seorang <strong class="text-white">Full-Stack Web & Mobile Developer</strong> yang berkomitmen menghadirkan produk digital berkualitas tinggi, tangguh, dan siap pakai untuk industri. Berfokus pada penulisan kode bersih (<em class="text-cyan-300">Clean Code</em>), pemisahan arsitektur yang modular, serta pemanfaatan pola desain perangkat lunak (<em class="text-cyan-300">Design Patterns</em>) yang tepat guna.
+            </p>
+            <p>
+              Di sisi <strong class="text-cyan-400">Web Development</strong>, saya berpengalaman membangun aplikasi interaktif menggunakan React, Next.js, dan Tailwind CSS, yang didukung arsitektur backend kokoh menggunakan Node.js, Express, PHP (Laravel), Python, serta manajemen basis data relasional (PostgreSQL, MySQL) maupun non-relasional (MongoDB).
+            </p>
+            <p>
+              Di ranah <strong class="text-purple-400">Mobile Development</strong>, saya mengembangkan aplikasi lintas platform performa tinggi menggunakan Flutter dan React Native. Saya mengutamakan kelancaran frame rate (60/120fps), efisiensi manajemen state, integrasi API real-time, serta kemampuan sinkronisasi offline untuk memberikan pengalaman pengguna terbaik.
+            </p>
+            <p class="text-sm text-slate-400 pt-2 border-t border-slate-800">
+              Bagi saya, perangkat lunak yang hebat bukan hanya yang tampak menarik di permukaan, melainkan juga yang memiliki fondasi data yang aman, responsivitas tinggi di saat beban puncak, dan mudah dirawat oleh tim developer di masa mendatang.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: 4 Pillar Highlight Cards (5 cols) -->
+        <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4" data-aos="fade-left" data-aos-delay="200">
+          
+          <!-- Card 1 -->
+          <div class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition-all duration-300">
+            <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center mb-3">
+              <i data-lucide="layers" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-base font-bold text-white">Clean Architecture</h3>
+            <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+              Struktur kode modular, maintainable, serta mudah diuji (unit/integration tests) dan dikembangkan tim.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition-all duration-300">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center mb-3">
+              <i data-lucide="smartphone" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-base font-bold text-white">Cross-Platform Apps</h3>
+            <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+              Pengembangan aplikasi Android & iOS dengan Flutter & React Native yang responsif dan native feel.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition-all duration-300">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center mb-3">
+              <i data-lucide="database" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-base font-bold text-white">Database & API Tuning</h3>
+            <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+              Perancangan RESTful API terstandarisasi, indexing database cepat, dan caching efisien (Redis).
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition-all duration-300">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-3">
+              <i data-lucide="shield-check" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-base font-bold text-white">Security & DevOps</h3>
+            <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+              Praktik keamanan web/mobile (JWT, OAuth, RBAC), containerization Docker, dan kontrol versi Git.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       TECH STACK & SKILLS SECTION
+       ========================================================================= -->
+  <section id="skills" class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest px-3 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/20 inline-block">
+          Teknologi & Keahlian
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+          Tech Stack Lengkap <span class="text-gradient-cyan-blue">End-to-End</span>
+        </h2>
+        <p class="text-slate-400 text-base leading-relaxed">
+          Kombinasi teknologi modern yang siap diterapkan untuk proyek enterprise, startup, maupun skala bisnis menengah.
+        </p>
+      </div>
+
+      <!-- Skills Grid (4 Categorized Cards) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Category 1: Web Frontend -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center">
+                <i data-lucide="monitor" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-white">Web Frontend</h3>
+                <span class="text-xs text-slate-400 font-mono">UI/UX & Client Logic</span>
+              </div>
+            </div>
+            <p class="text-xs text-slate-400 mb-5 leading-relaxed">
+              Membangun antarmuka modern, interaktif, SEO-friendly, dan sepenuhnya responsif pada setiap resolusi layar.
+            </p>
+          </div>
+
+          <div class="space-y-2 pt-4 border-t border-slate-800">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">CSS3</span>
+              <span class="skill-tag">JavaScript (ES6+)</span>
+              <span class="skill-tag font-semibold text-cyan-300">TypeScript</span>
+              <span class="skill-tag font-semibold text-cyan-300">React.js</span>
+              <span class="skill-tag font-semibold text-cyan-300">Next.js</span>
+              <span class="skill-tag font-semibold text-cyan-300">Tailwind CSS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: Mobile Development -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover:border-purple-500/40 transition-all duration-300 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center">
+                <i data-lucide="smartphone" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-white">Mobile Dev</h3>
+                <span class="text-xs text-slate-400 font-mono">Android & iOS</span>
+              </div>
+            </div>
+            <p class="text-xs text-slate-400 mb-5 leading-relaxed">
+              Aplikasi mobile lintas platform dengan performa tinggi, animasi mulus 60fps, dan integrasi hardware perangkat.
+            </p>
+          </div>
+
+          <div class="space-y-2 pt-4 border-t border-slate-800">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="skill-tag font-semibold text-purple-300">Flutter</span>
+              <span class="skill-tag font-semibold text-purple-300">Dart</span>
+              <span class="skill-tag font-semibold text-purple-300">React Native</span>
+              <span class="skill-tag">Android Integration</span>
+              <span class="skill-tag">iOS Integration</span>
+              <span class="skill-tag">State Management (BLoC/Redux)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3: Backend & Database -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition-all duration-300 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center">
+                <i data-lucide="server" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-white">Backend & DB</h3>
+                <span class="text-xs text-slate-400 font-mono">API & Storage Systems</span>
+              </div>
+            </div>
+            <p class="text-xs text-slate-400 mb-5 leading-relaxed">
+              Merancang REST API terstandardisasi, pengamanan data terenkripsi, optimasi query, dan normalisasi database.
+            </p>
+          </div>
+
+          <div class="space-y-2 pt-4 border-t border-slate-800">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="skill-tag font-semibold text-blue-300">Node.js</span>
+              <span class="skill-tag font-semibold text-blue-300">Express.js</span>
+              <span class="skill-tag font-semibold text-blue-300">PHP (Laravel)</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">RESTful API</span>
+              <span class="skill-tag font-semibold text-blue-300">PostgreSQL</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">MongoDB</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 4: Tools & DevOps -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/40 transition-all duration-300 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="400">
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                <i data-lucide="wrench" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-white">Tools & DevOps</h3>
+                <span class="text-xs text-slate-400 font-mono">Workflow & Deployment</span>
+              </div>
+            </div>
+            <p class="text-xs text-slate-400 mb-5 leading-relaxed">
+              Standar alur kerja modern untuk kolaborasi tim software yang terstruktur, rapi, dan terotomatisasi.
+            </p>
+          </div>
+
+          <div class="space-y-2 pt-4 border-t border-slate-800">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="skill-tag font-semibold text-emerald-300">Git</span>
+              <span class="skill-tag font-semibold text-emerald-300">GitHub</span>
+              <span class="skill-tag font-semibold text-emerald-300">Docker</span>
+              <span class="skill-tag">Postman</span>
+              <span class="skill-tag">Linux / Terminal</span>
+              <span class="skill-tag">VS Code</span>
+              <span class="skill-tag">Laragon / Web Server</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       FEATURED PROJECTS SECTION
+       ========================================================================= -->
+  <section id="projects" class="py-20 relative border-t border-slate-900 bg-slate-950/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6" data-aos="fade-up">
+        <div class="space-y-3">
+          <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest px-3 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/20 inline-block">
+            Portofolio Terpilih
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+            Karya Rekayasa <span class="text-gradient-cyan-blue">Web & Mobile</span>
+          </h2>
+          <p class="text-slate-400 text-base max-w-xl">
+            Proyek nyata dengan fokus penyelesaian masalah teknis, skalabilitas arsitektur, dan kepuasan pengguna akhir.
+          </p>
+        </div>
+
+        <!-- Filter Buttons Bar -->
+        <div class="flex items-center gap-2 p-1.5 rounded-2xl bg-slate-900/90 border border-slate-800 self-start md:self-auto">
+          <button type="button" data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/25">
+            Semua Proyek
+          </button>
+          <button type="button" data-filter="web" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:bg-slate-800/80 transition-all duration-200">
+            Web App
+          </button>
+          <button type="button" data-filter="mobile" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:bg-slate-800/80 transition-all duration-200">
+            Mobile App
+          </button>
+        </div>
+      </div>
+
+      <!-- Dynamic Projects Grid -->
+      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Rendered dynamically by main.js from projectsData -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       WORK EXPERIENCE & EDUCATION (TIMELINE)
+       ========================================================================= -->
+  <section id="experience" class="py-20 relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto space-y-3 mb-16" data-aos="fade-up">
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest px-3 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/20 inline-block">
+          Linimasa Karir
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+          Pengalaman & <span class="text-gradient-cyan-blue">Pendidikan</span>
+        </h2>
+        <p class="text-slate-400 text-base leading-relaxed">
+          Rekam jejak profesional, keterlibatan proyek rekayasa perangkat lunak, dan fondasi akademik ilmu komputer.
+        </p>
+      </div>
+
+      <!-- Vertical Timeline -->
+      <div class="relative pl-6 sm:pl-10 space-y-12 before:absolute before:left-3 sm:before:left-4 before:top-2 before:bottom-2 before:w-0.5 before:bg-gradient-to-b before:from-cyan-500 before:via-blue-500 before:to-purple-600">
+
+        <!-- Item 1: Full-Stack Developer -->
+        <div class="relative group" data-aos="fade-up" data-aos-delay="100">
+          <!-- Timeline Node Icon -->
+          <div class="absolute -left-[30px] sm:-left-[35px] top-1.5 w-6 h-6 rounded-full bg-slate-950 border-2 border-cyan-400 flex items-center justify-center shadow-lg shadow-cyan-500/30 group-hover:scale-125 transition-transform">
+            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+          </div>
+
+          <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition-all duration-300">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+              <div>
+                <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                  Full-Stack Web & Mobile Developer
+                </h3>
+                <p class="text-sm font-semibold text-cyan-400">Independent Consultant & Professional Projects</p>
+              </div>
+              <span class="text-xs font-mono px-3 py-1 rounded-full bg-slate-800/90 text-slate-300 border border-slate-700/60 self-start sm:self-auto">
+                2023 — Sekarang
+              </span>
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed mb-4">
+              Merancang dan mengimplementasikan sistem aplikasi terintegrasi untuk berbagai kebutuhan klien bisnis:
+            </p>
+            <ul class="text-xs sm:text-sm text-slate-400 space-y-2 list-disc list-inside">
+              <li>Membangun dashboard analitik web interaktif menggunakan Next.js, React, dan Tailwind CSS dengan render data real-time.</li>
+              <li>Mengembangkan aplikasi mobile Android/iOS menggunakan Flutter dan React Native dengan integrasi RESTful API terstandarisasi.</li>
+              <li>Mengoptimalkan struktur relasional database PostgreSQL & MySQL dengan indexing, query planning, dan pencegahan N+1 query problem.</li>
+              <li>Menerapkan prinsip clean code, unit testing, dan kontainerisasi menggunakan Docker untuk mempermudah deployment server.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Item 2: Mobile & Web Development Projects / Internship -->
+        <div class="relative group" data-aos="fade-up" data-aos-delay="200">
+          <!-- Timeline Node Icon -->
+          <div class="absolute -left-[30px] sm:-left-[35px] top-1.5 w-6 h-6 rounded-full bg-slate-950 border-2 border-blue-500 flex items-center justify-center shadow-lg shadow-blue-500/30 group-hover:scale-125 transition-transform">
+            <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+          </div>
+
+          <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition-all duration-300">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+              <div>
+                <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                  Software Engineering & Full-Stack Apprentice
+                </h3>
+                <p class="text-sm font-semibold text-blue-400">Tech Intensive Bootcamp & Project Mentorship</p>
+              </div>
+              <span class="text-xs font-mono px-3 py-1 rounded-full bg-slate-800/90 text-slate-300 border border-slate-700/60 self-start sm:self-auto">
+                2022 — 2023
+              </span>
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed mb-4">
+              Fokus intensif pada pendalaman arsitektur backend, algoritma komputasi, dan integrasi multi-platform:
+            </p>
+            <ul class="text-xs sm:text-sm text-slate-400 space-y-2 list-disc list-inside">
+              <li>Membangun backend microservices menggunakan Node.js (Express) dan PHP, serta pengelolaan autentikasi JWT dan OAuth2.</li>
+              <li>Implementasi State Management BLoC pada Flutter dan Redux Toolkit pada React Native untuk performa aplikasi yang prediktif.</li>
+              <li>Berkolaborasi dalam tim agile menggunakan Git version control, branching strategies, code review, dan API testing via Postman.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Item 3: Formal Education & Certifications -->
+        <div class="relative group" data-aos="fade-up" data-aos-delay="300">
+          <!-- Timeline Node Icon -->
+          <div class="absolute -left-[30px] sm:-left-[35px] top-1.5 w-6 h-6 rounded-full bg-slate-950 border-2 border-purple-500 flex items-center justify-center shadow-lg shadow-purple-500/30 group-hover:scale-125 transition-transform">
+            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+          </div>
+
+          <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800 hover:border-purple-500/40 transition-all duration-300">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+              <div>
+                <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">
+                  Pendidikan Rekayasa Perangkat Lunak & Sertifikasi
+                </h3>
+                <p class="text-sm font-semibold text-purple-400">Fondasi Akademik & Keahlian Komputasi</p>
+              </div>
+              <span class="text-xs font-mono px-3 py-1 rounded-full bg-slate-800/90 text-slate-300 border border-slate-700/60 self-start sm:self-auto">
+                Software Engineering
+              </span>
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed mb-4">
+              Mempelajari secara mendalam prinsip-prinsip sains komputasi, struktur data & algoritma, Object-Oriented Programming (OOP), pemodelan database relasional (ERD & Normalisasi), serta Rekayasa Perangkat Lunak modern.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="text-xs font-mono px-3 py-1 rounded-md bg-purple-500/10 text-purple-300 border border-purple-500/20">
+                Full-Stack Web Certification
+              </span>
+              <span class="text-xs font-mono px-3 py-1 rounded-md bg-purple-500/10 text-purple-300 border border-purple-500/20">
+                Cross-Platform Mobile Dev
+              </span>
+              <span class="text-xs font-mono px-3 py-1 rounded-md bg-purple-500/10 text-purple-300 border border-purple-500/20">
+                Database Administration & SQL
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       CONTACT SECTION
+       ========================================================================= -->
+  <section id="contact" class="py-20 relative border-t border-slate-900 bg-slate-950/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto space-y-3 mb-16">
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest px-3 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/20 inline-block">
+          Hubungi Saya
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+          Mari Membangun Sesuatu yang <span class="text-gradient-cyan-blue">Luar Biasa</span>
+        </h2>
+        <p class="text-slate-400 text-base leading-relaxed">
+          Apakah Anda recruiter yang sedang mencari talenta pengembang, atau perusahaan yang memerlukan solusi aplikasi web & mobile? Silakan kirimkan pesan langsung.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        
+        <!-- Left: Direct Info Cards (5 cols) -->
+        <div class="lg:col-span-5 space-y-5" data-aos="fade-right" data-aos-delay="100">
+          
+          <!-- Availability Card -->
+          <div class="glass-panel p-6 rounded-2xl border border-cyan-500/30 bg-cyan-500/5">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse-glow"></span>
+              <h3 class="text-base font-bold text-white">Status: Siap Direkrut</h3>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Saya terbuka untuk kesempatan kerja posisi <strong class="text-cyan-300">Full-Stack Web Developer</strong> dan <strong class="text-cyan-300">Full-Stack Mobile Developer</strong> secara Full-time, Kontrak, maupun Proyek Skala Menengah/Besar.
+            </p>
+          </div>
+
+          <!-- Direct Contact Details -->
+          <div class="glass-panel p-6 rounded-2xl border border-slate-800 space-y-4">
+            
+            <!-- Email -->
+            <a href="mailto:kafinurhikmah@gmail.com" class="flex items-center gap-4 p-3 rounded-xl hover:bg-slate-800/60 border border-transparent hover:border-slate-700/60 transition-all duration-200 group">
+              <div class="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Email Profesional</span>
+                <p class="text-sm font-bold text-white group-hover:text-cyan-400 transition-colors">kafinurhikmah@gmail.com</p>
+              </div>
+            </a>
+
+            <!-- Location -->
+            <div class="flex items-center gap-4 p-3 rounded-xl">
+              <div class="w-11 h-11 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Lokasi</span>
+                <p class="text-sm font-bold text-white">Indonesia (WIB / GMT+7)</p>
+                <span class="text-xs text-slate-400">Tersedia untuk Remote & On-Site</span>
+              </div>
+            </div>
+
+            <!-- GitHub & LinkedIn Dual Card -->
+            <div class="grid grid-cols-2 gap-3 pt-2">
+              <a href="https://github.com/kafinurhikmah" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/40 hover:bg-slate-800/80 transition-all duration-200 flex items-center gap-3">
+                <i data-lucide="github" class="w-5 h-5 text-cyan-400"></i>
+                <div>
+                  <span class="text-[10px] font-mono text-slate-500 block">PROFIL</span>
+                  <span class="text-xs font-bold text-white">GitHub</span>
+                </div>
+              </a>
+              <a href="https://linkedin.com/in/kafinurhikmah" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/40 hover:bg-slate-800/80 transition-all duration-200 flex items-center gap-3">
+                <i data-lucide="linkedin" class="w-5 h-5 text-blue-400"></i>
+                <div>
+                  <span class="text-[10px] font-mono text-slate-500 block">PROFIL</span>
+                  <span class="text-xs font-bold text-white">LinkedIn</span>
+                </div>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Right: Interactive Contact Form (7 cols) -->
+        <div class="lg:col-span-7" data-aos="fade-left" data-aos-delay="200">
+          <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800">
+            <h3 class="text-xl font-bold text-white mb-2">Kirim Pesan Langsung</h3>
+            <p class="text-xs sm:text-sm text-slate-400 mb-6">
+              Isi formulir di bawah ini dan pesan Anda akan langsung diproses.
+            </p>
+
+            <form id="contact-form" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Name -->
+                <div>
+                  <label for="contact-name" class="block text-xs font-mono font-semibold text-slate-300 mb-1.5">
+                    Nama Lengkap <span class="text-cyan-400">*</span>
+                  </label>
+                  <input type="text" id="contact-name" required placeholder="cth. Sarah Jane" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700/80 focus:border-cyan-400 focus:outline-none focus:ring-1 focus:ring-cyan-400 text-sm text-white placeholder-slate-500 transition-all">
+                </div>
+
+                <!-- Email -->
+                <div>
+                  <label for="contact-email" class="block text-xs font-mono font-semibold text-slate-300 mb-1.5">
+                    Alamat Email <span class="text-cyan-400">*</span>
+                  </label>
+                  <input type="email" id="contact-email" required placeholder="cth. sarah@company.com" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700/80 focus:border-cyan-400 focus:outline-none focus:ring-1 focus:ring-cyan-400 text-sm text-white placeholder-slate-500 transition-all">
+                </div>
+              </div>
+
+              <!-- Subject / Category -->
+              <div>
+                <label for="contact-category" class="block text-xs font-mono font-semibold text-slate-300 mb-1.5">
+                  Tujuan / Kebutuhan
+                </label>
+                <select id="contact-category" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700/80 focus:border-cyan-400 focus:outline-none focus:ring-1 focus:ring-cyan-400 text-sm text-white transition-all">
+                  <option value="Hiring Full-Stack Developer">Rekrutmen: Full-Stack Web / Mobile Developer</option>
+                  <option value="Custom Project Development">Diskusi Proyek Pembuatan Aplikasi</option>
+                  <option value="Technical Consultation">Konsultasi Arsitektur Software</option>
+                  <option value="General Inquiry">Pesan Lainnya</option>
+                </select>
+              </div>
+
+              <!-- Message -->
+              <div>
+                <label for="contact-message-input" class="block text-xs font-mono font-semibold text-slate-300 mb-1.5">
+                  Pesan Anda <span class="text-cyan-400">*</span>
+                </label>
+                <textarea id="contact-message-input" rows="4" required placeholder="Tuliskan detail tawaran posisi, lingkup proyek, atau pertanyaan Anda di sini..." class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700/80 focus:border-cyan-400 focus:outline-none focus:ring-1 focus:ring-cyan-400 text-sm text-white placeholder-slate-500 transition-all resize-none"></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="w-full py-3.5 rounded-xl font-bold text-sm text-slate-950 bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/35 transition-all duration-200 flex items-center justify-center gap-2">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                Kirim Pesan Sekarang
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="py-10 border-t border-slate-900 bg-slate-950 text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-white">Kafi Nur Hikmah</span>
+        <span>•</span>
+        <span>Hak Cipta &copy; 2026. All rights reserved.</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <span class="text-slate-500 font-mono">Dibuat dengan Clean Architecture & Tailwind CSS</span>
+        <a href="#home" class="text-cyan-400 hover:text-cyan-300 transition-colors flex items-center gap-1 font-semibold">
+          Kembali ke Atas <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       FLOATING BACK TO TOP BUTTON
+       ========================================================================= -->
+  <button id="back-to-top" aria-label="Back to Top" class="fixed bottom-6 right-6 z-40 p-3 rounded-xl bg-slate-900/90 text-cyan-400 border border-cyan-500/40 shadow-xl shadow-cyan-500/20 hover:bg-cyan-500 hover:text-slate-950 hover:scale-110 active:scale-95 transition-all duration-300 opacity-0 pointer-events-none translate-y-6">
+    <i data-lucide="chevron-up" class="w-5 h-5"></i>
+  </button>
+
+  <!-- =========================================================================
+       CUSTOM TOAST NOTIFICATION
+       ========================================================================= -->
+  <div id="toast-notification" class="fixed bottom-6 left-6 z-50 max-w-md p-4 rounded-2xl glass-panel border border-slate-700/80 shadow-2xl flex items-start gap-3.5 translate-y-20 opacity-0 pointer-events-none transition-all">
+    <div id="toast-icon" class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+      <i data-lucide="check" class="w-4 h-4"></i>
+    </div>
+    <div class="flex-1 text-xs">
+      <h4 id="toast-title" class="font-bold text-white text-sm">Pemberitahuan</h4>
+      <p id="toast-message" class="text-slate-400 mt-0.5 leading-normal">Pesan Anda berhasil dikirimkan.</p>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       CV PREVIEW & DOWNLOAD MODAL
+       ========================================================================= -->
+  <div id="cv-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+    <!-- Backdrop -->
+    <div id="cv-modal-backdrop" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md"></div>
+    
+    <!-- Modal Dialog Content -->
+    <div class="relative z-10 w-full max-w-2xl rounded-2xl glass-panel border border-cyan-500/30 shadow-2xl overflow-hidden p-6 sm:p-8 space-y-6">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center">
+            <i data-lucide="file-check-2" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white">Curriculum Vitae (CV) Summary</h3>
+            <p class="text-xs text-slate-400 font-mono">Kafi Nur Hikmah — Software Engineer</p>
+          </div>
+        </div>
+        <button id="close-cv-modal" class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm text-slate-300 max-h-[60vh] overflow-y-auto pr-2">
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <span class="text-xs font-mono text-cyan-400 uppercase tracking-wider block font-bold">Ringkasan Profil</span>
+          <p class="leading-relaxed">
+            Full-Stack Web & Mobile Developer yang ahli merancang aplikasi end-to-end dengan performa tinggi. Menguasai arsitektur frontend modern (React, Next.js, Flutter), backend scalable (Node.js, PHP, Python), dan manajemen database (PostgreSQL, MySQL, MongoDB).
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
+            <span class="text-[11px] font-mono text-slate-400 block mb-1">POSISI TARGET</span>
+            <p class="font-bold text-white text-xs">Full-Stack Web / Mobile Developer</p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
+            <span class="text-[11px] font-mono text-slate-400 block mb-1">STATUS KERJA</span>
+            <p class="font-bold text-emerald-400 text-xs">Available for Immediate Hire</p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+          <span class="text-xs font-mono text-slate-400 block font-semibold">KEUNGGULAN UTAMA REKRUTMEN:</span>
+          <ul class="text-xs text-slate-400 space-y-1.5 list-disc list-inside">
+            <li>Solusi menyeluruh dari database schema hingga desain UI responsif & interaktif.</li>
+            <li>Kode rapi berprinsip clean architecture, mudah diuji dan dikembangkan tim.</li>
+            <li>Pengalaman rilis aplikasi web enterprise dan mobile app cross-platform.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Modal Footer CTA -->
+      <div class="pt-4 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-end gap-3">
+        <button onclick="window.print()" class="w-full sm:w-auto px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 transition-colors flex items-center justify-center gap-2">
+          <i data-lucide="printer" class="w-4 h-4"></i> Cetak / Simpan PDF
+        </button>
+        <a href="mailto:kafinurhikmah@gmail.com?subject=Permintaan%20Dokumen%20CV%20Lengkap%20-%20Kafi%20Nur%20Hikmah" class="w-full sm:w-auto px-5 py-2.5 rounded-xl text-xs font-bold text-slate-950 bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 shadow-lg shadow-cyan-500/20 transition-all flex items-center justify-center gap-2">
+          <i data-lucide="download" class="w-4 h-4"></i> Minta CV PDF Resmi via Email
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Helper Tag Styling -->
+  <style>
+    .skill-tag {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 0.375rem;
+      background-color: rgba(30, 41, 59, 0.7);
+      color: #cbd5e1;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      border: 1px solid rgba(51, 65, 85, 0.5);
+      display: inline-block;
+    }
+  </style>
+
+  <!-- Scripts -->
+  <script src="assets/js/projects-data.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- AOS, Typed.js & VanillaTilt Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      once: true,
+      offset: 50,
+      duration: 800,
+      easing: 'ease-out-cubic',
+    });
+
+    // Initialize Typed.js
+    new Typed('#typed-role', {
+      strings: [
+        'Full-Stack Web Developer', 
+        'Mobile App Developer', 
+        'Software Engineer',
+        'Tech Enthusiast'
+      ],
+      typeSpeed: 50,
+      backSpeed: 30,
+      backDelay: 2500,
+      loop: true,
+      showCursor: true,
+      cursorChar: '|'
+    });
+
+    // Initialize VanillaTilt for initial elements (like skills)
+    // Project cards tilt will be initialized in main.js after render
+    VanillaTilt.init(document.querySelectorAll(".glass-panel"), {
+      max: 5,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.1,
+    });
+  </script>
+</body>
+</html>
