@@ -17,7 +17,7 @@ const projectsData = [
     icon: "shopping-bag",
     techStack: ["Next.js", "React", "Node.js", "PostgreSQL", "Tailwind CSS", "Redis", "Docker"],
     liveUrl: "https://github.com/kafinurhikmah",
-    githubUrl: "https://github.com/kafinurhikmah"
+    githubUrl: "https://github.com/kafinurhikmah-sketch"
   },
   {
     id: 2,
@@ -48,8 +48,8 @@ const projectsData = [
     imageBg: "from-teal-600/30 via-slate-900 to-blue-950",
     icon: "file-text",
     techStack: ["React", "TypeScript", "Python", "FastAPI", "PostgreSQL", "Tailwind CSS", "Docker"],
-    liveUrl: "https://github.com/kafinurhikmah",
-    githubUrl: "https://github.com/kafinurhikmah"
+    liveUrl: "https://github.com/kafinurhikmah-sketch",
+    githubUrl: "https://github.com/kafinurhikmah-sketch"
   },
   {
     id: 4,
@@ -65,7 +65,7 @@ const projectsData = [
     icon: "activity",
     techStack: ["React Native", "TypeScript", "Express.js", "MySQL", "Redux Toolkit", "Socket.io"],
     liveUrl: "https://github.com/kafinurhikmah",
-    githubUrl: "https://github.com/kafinurhikmah"
+    githubUrl: "https://github.com/kafinurhikmah-sketch"
   },
   {
     id: 5,
@@ -81,7 +81,7 @@ const projectsData = [
     icon: "credit-card",
     techStack: ["PHP", "Laravel", "JavaScript", "MySQL", "Tailwind CSS", "RESTful API"],
     liveUrl: "https://github.com/kafinurhikmah",
-    githubUrl: "https://github.com/kafinurhikmah"
+    githubUrl: "https://github.com/kafinurhikmah-sketch"
   },
   {
     id: 6,
@@ -97,7 +97,7 @@ const projectsData = [
     icon: "pie-chart",
     techStack: ["Flutter", "Dart", "Firebase", "SQLite", "Clean Architecture", "REST API"],
     liveUrl: "https://github.com/kafinurhikmah",
-    githubUrl: "https://github.com/kafinurhikmah"
+    githubUrl: "https://github.com/kafinurhikmah-sketch"
   }
 ];
 

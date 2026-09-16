@@ -3,6 +3,9 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // 0. Setup Preloader Animation
+  setupPreloader();
+
   // Initialize Lucide Icons
   if (window.lucide) {
     window.lucide.createIcons();
@@ -49,7 +52,7 @@ function renderProjects(filterCategory = 'all') {
 
   filtered.forEach((project, index) => {
     const card = document.createElement('div');
-    card.className = 'project-card group relative rounded-2xl overflow-hidden glass-panel border border-slate-800 hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between';
+    card.className = 'project-card group relative rounded-2xl overflow-hidden glass-panel border border-slate-800 hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between preserve-3d';
     card.setAttribute('data-category', project.category);
     card.setAttribute('data-aos', 'fade-up');
     card.setAttribute('data-aos-delay', String((index % 3) * 100));
@@ -66,12 +69,12 @@ function renderProjects(filterCategory = 'all') {
 
     card.innerHTML = `
       <!-- Project Visual Mockup Header -->
-      <div class="relative h-52 w-full bg-gradient-to-br ${project.imageBg} p-6 flex flex-col justify-between overflow-hidden border-b border-slate-800">
+      <div class="relative h-52 w-full bg-gradient-to-br ${project.imageBg} p-6 flex flex-col justify-between overflow-hidden border-b border-slate-800 preserve-3d">
         <!-- Ambient Grid Background -->
         <div class="absolute inset-0 bg-grid-pattern opacity-30"></div>
         
         <!-- Category & Status Badge -->
-        <div class="relative z-10 flex items-center justify-between">
+        <div class="relative z-10 flex items-center justify-between translate-z-20">
           <span class="text-xs font-semibold px-3 py-1 rounded-full border ${badgeColorClass} backdrop-blur-md">
             ${project.badge}
           </span>
@@ -81,15 +84,15 @@ function renderProjects(filterCategory = 'all') {
           </span>
         </div>
 
-        <!-- Simulated Device Mockup / Code Graphic -->
-        <div class="relative z-10 my-auto flex items-center justify-center">
+        <!-- Simulated Device Mockup / Code Graphic with 3D Pop-out -->
+        <div class="relative z-10 my-auto flex items-center justify-center translate-z-30">
           <div class="w-16 h-16 rounded-2xl bg-slate-900/80 border border-slate-700/60 flex items-center justify-center text-cyan-400 shadow-xl group-hover:scale-110 group-hover:border-cyan-400 transition-all duration-300">
             <i data-lucide="${project.icon}" class="w-8 h-8"></i>
           </div>
         </div>
 
         <!-- Quick Links Overlay Bar -->
-        <div class="relative z-10 flex items-center justify-between text-xs text-slate-300">
+        <div class="relative z-10 flex items-center justify-between text-xs text-slate-300 translate-z-10">
           <span class="text-slate-400 font-mono">#0${index + 1}</span>
           <div class="flex items-center gap-3">
             <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors" title="Lihat Repository GitHub">
@@ -103,8 +106,8 @@ function renderProjects(filterCategory = 'all') {
       </div>
 
       <!-- Project Content Body -->
-      <div class="p-6 flex-1 flex flex-col justify-between space-y-5">
-        <div>
+      <div class="p-6 flex-1 flex flex-col justify-between space-y-5 preserve-3d">
+        <div class="translate-z-10">
           <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
             ${project.title}
           </h3>
@@ -115,38 +118,44 @@ function renderProjects(filterCategory = 'all') {
           <!-- Problem & Solution Box -->
           <div class="mt-4 p-3.5 rounded-xl bg-slate-900/70 border border-slate-800/80 space-y-2 text-xs">
             <div>
-              <span class="font-semibold text-rose-400 flex items-center gap-1">
-                <i data-lucide="alert-circle" class="w-3.5 h-3.5"></i> Masalah (Challenge):
+              <span class="font-semibold text-rose-400 flex items-center gap-1.5 font-mono">
+                <i data-lucide="alert-circle" class="w-3.5 h-3.5"></i> Masalah:
               </span>
-              <p class="text-slate-400 mt-0.5 leading-normal">${project.problem}</p>
+              <p class="text-slate-400 mt-0.5 leading-normal">
+                ${project.problem}
+              </p>
             </div>
             <div class="pt-2 border-t border-slate-800">
-              <span class="font-semibold text-emerald-400 flex items-center gap-1">
-                <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> Solusi Rekayasa (Solution):
+              <span class="font-semibold text-emerald-400 flex items-center gap-1.5 font-mono">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> Solusi:
               </span>
-              <p class="text-slate-400 mt-0.5 leading-normal">${project.solution}</p>
+              <p class="text-slate-300 mt-0.5 leading-normal">
+                ${project.solution}
+              </p>
             </div>
           </div>
         </div>
 
-        <!-- Tech Stack Badges -->
-        <div>
-          <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-2 font-mono">Tech Stack:</div>
+        <div class="space-y-4 pt-4 border-t border-slate-800/80 translate-z-10">
+          <!-- Tech Stack Tags -->
           <div class="flex flex-wrap gap-1.5">
             ${techBadges}
           </div>
-        </div>
 
-        <!-- Action Buttons -->
-        <div class="pt-4 border-t border-slate-800 flex items-center gap-3">
-          <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 px-4 rounded-xl bg-cyan-500/10 hover:bg-cyan-500 text-cyan-400 hover:text-slate-950 font-semibold text-xs text-center border border-cyan-500/30 hover:border-cyan-400 transition-all duration-200 flex items-center justify-center gap-2">
-            <i data-lucide="play" class="w-3.5 h-3.5"></i>
-            Live Demo
-          </a>
-          <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 px-4 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white font-semibold text-xs text-center border border-slate-700/60 transition-all duration-200 flex items-center justify-center gap-2">
-            <i data-lucide="github" class="w-3.5 h-3.5"></i>
-            Source Code
-          </a>
+          <!-- Project CTAs -->
+          <div class="flex items-center justify-between pt-2">
+            <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-xs font-bold text-cyan-400 hover:text-cyan-300 transition-colors group/link">
+              <span>Demo Langsung</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform"></i>
+            </a>
+            
+            <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-white transition-colors">
+              <i data-lucide="code" class="w-3.5 h-3.5"></i>
+              <span>Source Code</span>
+            </a>
+          </div>
         </div>
       </div>
     `;
@@ -159,13 +168,14 @@ function renderProjects(filterCategory = 'all') {
     window.lucide.createIcons();
   }
   
-  // Initialize VanillaTilt for dynamic project cards
+  // Initialize VanillaTilt for dynamic project cards with 3D perspective
   if (typeof VanillaTilt !== 'undefined') {
     VanillaTilt.init(document.querySelectorAll(".project-card"), {
-      max: 4,
+      max: 8,
       speed: 400,
+      perspective: 1000,
       glare: true,
-      "max-glare": 0.1,
+      "max-glare": 0.15,
     });
   }
 
@@ -182,15 +192,17 @@ function renderProjects(filterCategory = 'all') {
  */
 function setupProjectFilters() {
   const filterButtons = document.querySelectorAll('.filter-btn');
+  if (!filterButtons || filterButtons.length === 0) return;
+
   filterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       filterButtons.forEach(b => {
-        b.classList.remove('active', 'bg-cyan-500', 'text-slate-950', 'shadow-lg', 'shadow-cyan-500/25');
-        b.classList.add('bg-slate-800/80', 'text-slate-300', 'hover:bg-slate-700');
+        b.classList.remove('active', 'bg-cyan-500', 'text-slate-950', 'shadow-lg', 'shadow-cyan-500/25', 'font-bold');
+        b.classList.add('text-slate-300', 'hover:bg-slate-800/80', 'font-semibold');
       });
 
-      btn.classList.remove('bg-slate-800/80', 'text-slate-300', 'hover:bg-slate-700');
-      btn.classList.add('active', 'bg-cyan-500', 'text-slate-950', 'shadow-lg', 'shadow-cyan-500/25');
+      btn.classList.remove('text-slate-300', 'hover:bg-slate-800/80', 'font-semibold');
+      btn.classList.add('active', 'bg-cyan-500', 'text-slate-950', 'shadow-lg', 'shadow-cyan-500/25', 'font-bold');
 
       const filter = btn.getAttribute('data-filter') || 'all';
       renderProjects(filter);
@@ -422,4 +434,100 @@ function setupCursorGlow() {
     glow.classList.remove('opacity-100');
     glow.classList.add('opacity-0');
   });
+}
+
+/**
+ * Setup 3D Holographic Preloader Animation
+ */
+function setupPreloader() {
+  const preloader = document.getElementById('preloader');
+  const numberEl = document.getElementById('preloader-number');
+  const progressEl = document.getElementById('preloader-progress');
+  const statusEl = document.getElementById('preloader-status');
+
+  if (!preloader || !numberEl || !progressEl) return;
+
+  // Prevent scroll during intro
+  document.body.style.overflow = 'hidden';
+
+  // Initialize 3D WebGL Preloader Scene
+  if (window.Portfolio3D) {
+    window.Portfolio3D.initPreloader('preloader-canvas-3d');
+  }
+
+  let startTime = null;
+  const duration = 1500; // Snappy yet lets user appreciate 3D visuals (~1.5s)
+  let isCompleted = false;
+
+  function easeOutQuart(x) {
+    return 1 - Math.pow(1 - x, 4);
+  }
+
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const elapsed = timestamp - startTime;
+    const rawProgress = Math.min(elapsed / duration, 1);
+    const easedProgress = easeOutQuart(rawProgress);
+    const currentPercent = Math.round(easedProgress * 100);
+
+    numberEl.textContent = currentPercent;
+    progressEl.style.width = `${currentPercent}%`;
+
+    // Feed progress into 3D scene
+    if (window.Portfolio3D) {
+      window.Portfolio3D.updatePreloaderProgress(currentPercent);
+    }
+
+    // Dynamic telemetry status text
+    if (statusEl) {
+      if (currentPercent < 30) {
+        statusEl.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span> Menginisialisasi Kernel 3D...';
+      } else if (currentPercent < 70) {
+        statusEl.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span> Sinkronisasi Modul Arsitektur...';
+      } else if (currentPercent < 99) {
+        statusEl.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></span> Menyiapkan Antarmuka Interaktif...';
+      }
+    }
+
+    if (rawProgress < 1) {
+      requestAnimationFrame(step);
+    } else if (!isCompleted) {
+      isCompleted = true;
+      if (statusEl) {
+        statusEl.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Sistem 3D Siap &bull; Selamat Datang';
+        statusEl.classList.remove('text-slate-400');
+        statusEl.classList.add('text-cyan-400', 'font-semibold');
+      }
+
+      // Elegant exit choreography with 3D Warp Pulse
+      setTimeout(() => {
+        if (window.Portfolio3D) {
+          window.Portfolio3D.triggerPreloaderExit(() => {
+            triggerDomExit();
+          });
+        } else {
+          triggerDomExit();
+        }
+      }, 180);
+    }
+  }
+
+  function triggerDomExit() {
+    preloader.classList.add('preloader--leaving');
+
+    setTimeout(() => {
+      preloader.classList.add('preloader--hidden');
+      document.body.style.overflow = '';
+
+      if (window.AOS) {
+        window.AOS.refresh();
+      }
+
+      setTimeout(() => {
+        preloader.remove();
+      }, 900);
+    }, 240);
+  }
+
+  requestAnimationFrame(step);
 }
